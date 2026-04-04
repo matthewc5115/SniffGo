@@ -23,6 +23,7 @@
       <div class="buttons">
         <button id="searchBtn" class="btn" type="button">Search</button>
         <button id="luckyBtn" class="btn outline" type="button">I'm Feeling Playful</button>
+        <button id="vs" class="btn" type="button">Voice Search</button>
       </div>
     </form>
 
@@ -37,7 +38,35 @@
       <small>&copy; 2025 SniffGo</small>
     </footer>
   </main>
+  <script>
+  const searchInput = document.getElementById('q');
+  const startBtn = document.getElementById('vs');
 
+  // Support for different browsers
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (SpeechRecognition) {
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US'; // Set language
+
+    startBtn.onclick = () => {
+      recognition.start(); // Start listening
+    };
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript; // Get text
+      searchInput.value = transcript;
+      console.log("Searching for:", transcript);
+      // Optional: auto-trigger search function here
+    };
+
+    recognition.onerror = (event) => {
+      console.error("Error occurred in recognition: " + event.error);
+    };
+  } else {
+    alert("Your browser does not support the Web Speech API.");
+  }
+</script>
   <script src="scripts.js"></script>
 </body>
 </html>
