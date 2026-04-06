@@ -1,5 +1,5 @@
 const openMaintenancePage = true; // Set to true to enable
-const maintenanceUrl = 'maintenance.html';
+const maintenanceUrl = 'SniffGo/maintenance.html';
 
 // Get current page filename
 const currentPage = window.location.pathname.split('/').pop();
