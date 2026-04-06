@@ -1,8 +1,8 @@
 const openMaintenancePage = true; // Set to true to enable
-const maintenanceUrl = 'SniffGo/maintenance.html';
+const maintenanceUrl = 'maintenance.html';
 
 // Get current page filename
-const currentPage = window.location.pathname.split('/').pop();
+const currentPage = window.location.pathname.split('/SniffGo/').pop();
 
 // Only redirect if maintenance is ON and not already on maintenance page
 if (openMaintenancePage && currentPage !== 'maintenance.html') {
