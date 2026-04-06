@@ -1,7 +1,10 @@
 const openMaintenancePage = false; // Set to true to enable
-const maintenanceUrl = 'maintenance.html';
+const maintenanceUrl = '/maintenance.html';
 
-// Only redirect if maintenance is ON and the user isn't already there
-if (openMaintenancePage && !window.location.pathname.includes(maintenanceUrl)) {
+// Get current page filename
+const currentPage = window.location.pathname.split('/').pop();
+
+// Only redirect if maintenance is ON and not already on maintenance page
+if (openMaintenancePage && currentPage !== 'maintenance.html') {
     window.location.href = maintenanceUrl;
 }
