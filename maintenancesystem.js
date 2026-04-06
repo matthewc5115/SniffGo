@@ -1,13 +1,5 @@
-const express = require('express');
-const app = express();
+const openMaintenancePage = false; // Change to true to open maintenance.html
 
-// Toggle this via env variables or a database flag
-let isMaintenanceMode = process.env.MAINTENANCE === 'true';
-
-app.use((req, res, next) => {
-  if (isMaintenanceMode) {
-    // Redirect or serve a static maintenance page
-    return res.status(503).sendFile('maintenance.html');
-  }
-  next();
-});
+if (openMaintenancePage) {
+    window.location.href = 'maintenance.html';
+}
