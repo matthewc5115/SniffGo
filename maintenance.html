@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance - SniffGo</title>
+    <style>
+        :root {
+            --blue: #4285F4;
+            --red: #EA4335;
+            --yellow: #FBBC05;
+            --green: #34A853;
+            --gray: #5f6368;
+        }
+
+        body {
+            font-family: 'Product Sans', Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            color: #202124;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        .logo {
+            max-width: 272px;
+            height: auto;
+        }
+
+        .message-box {
+            max-width: 580px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: var(--gray);
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .loader {
+            margin: 25px auto;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: pulse 1.4s infinite ease-in-out;
+        }
+
+        .dot:nth-child(1) { background-color: var(--blue); animation-delay: 0s; }
+        .dot:nth-child(2) { background-color: var(--red); animation-delay: 0.2s; }
+        .dot:nth-child(3) { background-color: var(--yellow); animation-delay: 0.4s; }
+        .dot:nth-child(4) { background-color: var(--green); animation-delay: 0.6s; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        .btn-lucky {
+            margin-top: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+            font-family: arial,sans-serif;
+            font-size: 14px;
+            padding: 0 16px;
+            line-height: 36px;
+            cursor: pointer;
+        }
+
+        .btn-lucky:hover {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+            border: 1px solid #dadce0;
+            color: #202124;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <!-- Logo path applied here -->
+        <img src="SniffGo-4-4-2026.png" alt="SniffGo Logo" class="logo">
+    </div>
+
+    <div class="message-box">
+        <h1><b>404.</b> <span style="color: var(--gray)">That’s an error... wait, no.</span></h1>
+        <p><b>Maintenance Mode.</b> We're busy sniffing out bugs and polishing the code. Everything will be back to normal in a few moments!</p>
+        
+        <div class="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <button class="btn-lucky" onclick="location.reload()">I'm Feeling Patient</button>
+    </div>
+
+</body>
+</html>
