@@ -1,5 +1,7 @@
-const openMaintenancePage = false; // Change to true to open maintenance.html
+const openMaintenancePage = true; // Set to true to enable
+const maintenanceUrl = 'maintenance.html';
 
-if (openMaintenancePage) {
-    window.location.href = 'maintenance.html';
+// Only redirect if maintenance is ON and the user isn't already there
+if (openMaintenancePage && !window.location.pathname.includes(maintenanceUrl)) {
+    window.location.href = maintenanceUrl;
 }
