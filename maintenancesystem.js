@@ -1,4 +1,4 @@
-const openMaintenancePage = true; // Set to true to enable
+const openMaintenancePage = false; // Set to true to enable
 const maintenanceUrl = 'maintenance.html';
 
 // Get current page filename
